@@ -3,6 +3,9 @@
     "appType": "backend",
     "stack": "app",
     "port": 4200,
+    "features": [
+        "prisma"
+    ],
     "dependsOn": [],
     "healthCheck": {
         "enabled": true,

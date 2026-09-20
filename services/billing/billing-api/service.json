@@ -3,6 +3,9 @@
     "appType": "backend",
     "stack": "billing",
     "port": 4210,
+    "features": [
+        "prisma"
+    ],
     "dependsOn": [],
     "healthCheck": {
         "enabled": true,

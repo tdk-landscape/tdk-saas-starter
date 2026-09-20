@@ -101,7 +101,7 @@ Every SaaS resource owns a compact declarative manifest:
   "stack":"billing",
   "appType": "backend",
   "port": 4210,
-  "dependencies": [],
+  "dependsOn": [],
   "healthCheck": {
     "enabled": true,
     "path": "/health"

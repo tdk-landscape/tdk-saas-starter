@@ -1,0 +1,15 @@
+{
+    "appName": "dashboard-app",
+    "domain": "app",
+    "appType": "frontend",
+    "stack": "app",
+    "port": 3200,
+    "basePath": "/dashboard-app",
+    "dependencies": [
+        "dashboard-api"
+    ],
+    "healthCheck": {
+        "enabled": true,
+        "path": "/"
+    }
+}

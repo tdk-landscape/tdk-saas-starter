@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+:root {
+    color: #eef1ff;
+    background: #0b0e17;
+    font-family: 'Inter', ui-sans-serif, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #0b0e17;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+code {
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+    font-size: 0.9em;
+}
+
+.page-shell {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 82% 4%, rgba(52, 211, 153, 0.22), transparent 32rem),
+        radial-gradient(circle at 4% 46%, rgba(124, 134, 255, 0.2), transparent 30rem),
+        #0b0e17;
+}
+
+.nav-shell {
+    position: fixed;
+    z-index: 20;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    width: min(1120px, calc(100% - 32px));
+    padding: 12px 14px 12px 22px;
+    border: 1px solid rgba(238, 241, 255, 0.16);
+    border-radius: 999px;
+    background: rgba(11, 14, 23, 0.72);
+    backdrop-filter: blur(18px);
+}
+
+.brand {
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    color: rgba(238, 241, 255, 0.7);
+}
+
+.nav-action {
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #eef1ff;
+    color: #0b0e17;
+    font-weight: 700;
+}
+
+.hero-section {
+    padding: 200px max(24px, 7vw) 80px;
+}
+
+.hero-copy {
+    max-width: 46rem;
+}
+
+.eyebrow {
+    margin: 0 0 18px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #34d399;
+}
+
+.hero-copy h1 {
+    margin: 0;
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+}
+
+.hero-copy p {
+    max-width: 38rem;
+    margin: 22px 0 0;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    color: rgba(238, 241, 255, 0.72);
+    line-height: 1.55;
+}
+
+.plans-section {
+    padding: 2rem max(24px, 7vw) 6rem;
+}
+
+.plans-intro {
+    max-width: 640px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin: 0;
+    font-size: clamp(2rem, 3.4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+}
+
+.plans-intro p {
+    margin-top: 10px;
+    color: rgba(238, 241, 255, 0.66);
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.plan-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(238, 241, 255, 0.06);
+    border: 1px solid rgba(238, 241, 255, 0.14);
+}
+
+.plan-card-featured {
+    background: rgba(124, 134, 255, 0.14);
+    border-color: rgba(124, 134, 255, 0.4);
+}
+
+.plan-badge {
+    position: absolute;
+    top: -12px;
+    right: 24px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: #7c86ff;
+    color: #0b0e17;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.plan-card h3 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.plan-price {
+    margin: 12px 0 20px;
+    color: rgba(238, 241, 255, 0.7);
+}
+
+.plan-price strong {
+    font-size: 2.2rem;
+    color: #eef1ff;
+}
+
+.plan-features {
+    flex: 1;
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    color: rgba(238, 241, 255, 0.72);
+    font-size: 0.95rem;
+}
+
+.plan-features li {
+    padding-left: 22px;
+    position: relative;
+}
+
+.plan-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.45em;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #34d399;
+}
+
+.pay-button {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    min-height: 48px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 1rem;
+    background: #34d399;
+    color: #04120c;
+    transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.pay-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.pay-button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.checkout-panel {
+    margin-top: 32px;
+    min-height: 64px;
+    padding: 24px 28px;
+    border-radius: 20px;
+    background: rgba(238, 241, 255, 0.05);
+    border: 1px dashed rgba(238, 241, 255, 0.2);
+}
+
+.checkout-hint {
+    margin: 0;
+    color: rgba(238, 241, 255, 0.56);
+}
+
+.checkout-error {
+    margin: 0;
+    color: #f4a261;
+}
+
+.checkout-success-badge {
+    display: inline-flex;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(52, 211, 153, 0.18);
+    color: #34d399;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.checkout-success h3 {
+    margin: 14px 0 16px;
+    font-size: 1.3rem;
+}
+
+.checkout-success dl {
+    margin: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.checkout-success dl > div {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    gap: 12px;
+    align-items: baseline;
+}
+
+.checkout-success dt {
+    color: rgba(238, 241, 255, 0.5);
+    font-size: 0.85rem;
+}
+
+.checkout-success dd {
+    margin: 0;
+    word-break: break-all;
+}
+
+.manifest-section {
+    padding: 2rem max(24px, 7vw) 8rem;
+}
+
+.manifest-grid {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.manifest-card {
+    padding: 26px;
+    border-radius: 20px;
+    background: rgba(238, 241, 255, 0.06);
+    border: 1px solid rgba(238, 241, 255, 0.14);
+}
+
+.manifest-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+}
+
+.manifest-card p {
+    margin: 0;
+    color: rgba(238, 241, 255, 0.66);
+    line-height: 1.5;
+}
+
+@media (max-width: 820px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero-section {
+        padding-top: 132px;
+    }
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-success dl > div {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .manifest-grid {
+        grid-template-columns: 1fr;
+    }
+}

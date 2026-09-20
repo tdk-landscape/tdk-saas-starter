@@ -1,0 +1,12 @@
+{
+    "appName": "billing-api",
+    "domain": "billing",
+    "appType": "backend",
+    "stack": "billing",
+    "port": 4210,
+    "dependencies": [],
+    "healthCheck": {
+        "enabled": true,
+        "path": "/health"
+    }
+}

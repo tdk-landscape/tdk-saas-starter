@@ -1,0 +1,15 @@
+{
+    "appName": "checkout-app",
+    "domain": "billing",
+    "appType": "frontend",
+    "stack": "billing",
+    "port": 3210,
+    "basePath": "/checkout-app",
+    "dependencies": [
+        "billing-api"
+    ],
+    "healthCheck": {
+        "enabled": true,
+        "path": "/"
+    }
+}

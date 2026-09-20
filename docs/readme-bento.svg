@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 620" role="img" aria-label="SaaS starter architecture bento">
+  <rect width="1600" height="620" fill="#0b0e17"/>
+  <g font-family="Arial, sans-serif">
+    <rect x="90" y="80" width="900" height="460" rx="32" fill="#eef1ff" fill-opacity="0.1" stroke="#eef1ff" stroke-opacity="0.18"/>
+    <rect x="1030" y="80" width="480" height="215" rx="32" fill="#4338ca" fill-opacity="0.55"/>
+    <rect x="1030" y="325" width="480" height="215" rx="32" fill="#34d399" fill-opacity="0.7"/>
+    <text x="140" y="160" fill="#eef1ff" font-size="42" font-weight="700">App Stack</text>
+    <text x="140" y="235" fill="#eef1ff" fill-opacity="0.76" font-size="30">dashboard-api :4200</text>
+    <text x="140" y="290" fill="#eef1ff" fill-opacity="0.76" font-size="30">dashboard-app :3200</text>
+    <text x="140" y="380" fill="#eef1ff" font-size="42" font-weight="700">Billing Stack</text>
+    <text x="140" y="455" fill="#eef1ff" fill-opacity="0.76" font-size="30">billing-api :4210</text>
+    <text x="140" y="510" fill="#eef1ff" fill-opacity="0.76" font-size="30">checkout-app :3210</text>
+    <text x="1080" y="152" fill="#eef1ff" font-size="36" font-weight="700">Live metrics</text>
+    <text x="1080" y="212" fill="#eef1ff" fill-opacity="0.84" font-size="25">MRR, churn, active accounts</text>
+    <text x="1080" y="252" fill="#eef1ff" fill-opacity="0.84" font-size="25">fetched from dashboard-api</text>
+    <text x="1080" y="397" fill="#04120c" font-size="36" font-weight="700">PSR Contract</text>
+    <text x="1080" y="452" fill="#04120c" fill-opacity="0.72" font-size="25">Project -&gt; Stack -&gt; Resource</text>
+    <text x="1080" y="490" fill="#04120c" fill-opacity="0.72" font-size="25">Manifests generate local flow.</text>
+  </g>
+</svg>

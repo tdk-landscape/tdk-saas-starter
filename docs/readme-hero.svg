@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" role="img" aria-label="TDK SaaS Starter Landscape">
+  <defs>
+    <radialGradient id="g" cx="76%" cy="14%" r="72%">
+      <stop offset="0" stop-color="#7c86ff" stop-opacity="0.62"/>
+      <stop offset="0.4" stop-color="#34d399" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#0b0e17"/>
+    </radialGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.78" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.14"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="720" fill="#0b0e17"/>
+  <rect width="1600" height="720" fill="url(#g)"/>
+  <rect width="1600" height="720" filter="url(#noise)" opacity="0.28"/>
+  <path d="M120 540 C320 470 470 590 660 500 C900 390 1100 470 1490 300" fill="none" stroke="#eef1ff" stroke-opacity="0.16" stroke-width="3"/>
+  <text x="120" y="150" fill="#eef1ff" font-family="Arial, sans-serif" font-size="30" letter-spacing="4">TDK SAAS STARTER</text>
+  <text x="120" y="290" fill="#eef1ff" font-family="Arial, sans-serif" font-size="92" font-weight="700">Dashboard,</text>
+  <text x="120" y="400" fill="#eef1ff" font-family="Arial, sans-serif" font-size="92" font-weight="700">billing, done.</text>
+  <text x="122" y="485" fill="#eef1ff" fill-opacity="0.72" font-family="Arial, sans-serif" font-size="30">A cloneable TDK landscape for SaaS account metrics and checkout.</text>
+  <g transform="translate(1080 150)">
+    <rect x="0" y="0" width="360" height="400" rx="30" fill="#eef1ff" fill-opacity="0.1" stroke="#eef1ff" stroke-opacity="0.22"/>
+    <rect x="34" y="40" width="150" height="16" rx="8" fill="#eef1ff" fill-opacity="0.6"/>
+    <rect x="34" y="72" width="90" height="34" rx="8" fill="#eef1ff" fill-opacity="0.9"/>
+    <g fill="#7c86ff">
+      <rect x="34" y="200" width="34" height="120" rx="6"/>
+      <rect x="86" y="160" width="34" height="160" rx="6"/>
+      <rect x="138" y="220" width="34" height="100" rx="6"/>
+    </g>
+    <g fill="#34d399">
+      <rect x="190" y="140" width="34" height="180" rx="6"/>
+      <rect x="242" y="180" width="34" height="140" rx="6"/>
+      <rect x="294" y="120" width="34" height="200" rx="6"/>
+    </g>
+    <rect x="34" y="346" width="292" height="34" rx="17" fill="#34d399"/>
+    <text x="180" y="368" fill="#04120c" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Subscribe</text>
+  </g>
+</svg>

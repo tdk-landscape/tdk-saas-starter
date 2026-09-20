@@ -98,9 +98,8 @@ Every SaaS resource owns a compact declarative manifest:
 ```json
 {
   "appName": "billing-api",
-  "domain": "billing",
+  "stack":"billing",
   "appType": "backend",
-  "stack": "billing",
   "port": 4210,
   "dependencies": [],
   "healthCheck": {

@@ -9,6 +9,9 @@
       "name": "Pre-Alpha",
       "description": "Core infrastructure and MVP services",
       "services": [
+        "proxy",
+        "verdaccio",
+        "database-management",
         "app",
         "billing"
       ]

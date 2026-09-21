@@ -13,8 +13,7 @@
         "verdaccio",
         "database-management",
         "app",
-        "billing",
-        "database-management"
+        "billing"
       ]
     },
     "alpha": {

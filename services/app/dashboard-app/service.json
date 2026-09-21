@@ -4,11 +4,6 @@
     "stack": "app",
     "port": 3200,
     "basePath": "/dashboard-app",
-    "features": [
-        "api-client",
-        "env-config",
-        "api-index"
-    ],
     "dependsOn": [
         "dashboard-api"
     ],

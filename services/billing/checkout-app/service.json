@@ -3,12 +3,6 @@
     "appType": "frontend",
     "stack": "billing",
     "port": 3210,
-    "basePath": "/checkout-app",
-    "features": [
-        "api-client",
-        "env-config",
-        "api-index"
-    ],
     "dependsOn": [
         "billing-api"
     ],

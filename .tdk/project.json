@@ -13,7 +13,8 @@
         "verdaccio",
         "database-management",
         "app",
-        "billing"
+        "billing",
+        "database-management"
       ]
     },
     "alpha": {
@@ -36,7 +37,8 @@
     "monitoring": false,
     "elk": false,
     "debezium": false,
-    "golden_image": true
+    "golden_image": true,
+    "verdaccio": false
   },
   "discovery": {
     "paths": [

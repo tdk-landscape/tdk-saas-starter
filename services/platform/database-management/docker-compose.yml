@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: tdk_saas_starter_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: tdk_saas_starter
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - tdk_saas_starter_postgres_data:/var/lib/postgresql/data
+    networks:
+      - database
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tdk_saas_starter -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+networks:
+  database:
+    name: tdk_saas_starter_database
+    external: true
+
+volumes:
+  tdk_saas_starter_postgres_data:

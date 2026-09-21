@@ -130,11 +130,11 @@ services:
         - VITE_APP_ENV=development
     labels:
         - "traefik.enable=true"
-        - 'traefik.http.routers.checkout-app.rule=Host(`checkout-app.localhost`) || (Host(`app.tdk-saas-starter.localhost`) && PathPrefix(`/checkout-app`)) || (Host(`localhost`) && PathPrefix(`/checkout-app`))'
+        - 'traefik.http.routers.checkout-app.rule=Host(`checkout-app.localhost`) || (Host(`app.tdk-saas-starter.localhost`) && PathPrefix(`/billings`)) || (Host(`localhost`) && PathPrefix(`/billings`))'
         - "traefik.http.routers.checkout-app.entrypoints=web,websecure"
-        - "traefik.http.routers.checkout-app.priority=113"
+        - "traefik.http.routers.checkout-app.priority=109"
         - "traefik.http.routers.checkout-app.middlewares=checkout-app-strip-prefix"
-        - "traefik.http.middlewares.checkout-app-strip-prefix.stripprefix.prefixes=/checkout-app"
+        - "traefik.http.middlewares.checkout-app-strip-prefix.stripprefix.prefixes=/billings"
         - "traefik.http.services.checkout-app.loadbalancer.server.port=3210"
         - "traefik.docker.network=tdk_saas_starter_traefik-public"
     networks:

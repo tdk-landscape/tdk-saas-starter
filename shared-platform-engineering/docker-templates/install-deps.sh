@@ -30,20 +30,26 @@ export BUN_INSTALL_CACHE_DIR=/cache/bun
 mkdir -p $BUN_INSTALL_CACHE_DIR
 
 # =============================================================================
-# Check Verdaccio registry (try localhost for --network=host, fallback to host.docker.internal)
+# Check Verdaccio registry (premium feature — only required when VERDACCIO_LICENSE_KEY is set)
+# Without a license key, skip Verdaccio and fall back to public npm registry.
 # =============================================================================
-VERDACCIO_URL="http://localhost:4873"
-echo "🔍 Checking Verdaccio registry at $VERDACCIO_URL..."
-if ! wget -q --spider --timeout=3 "$VERDACCIO_URL" 2>/dev/null; then
-  VERDACCIO_URL="http://host.docker.internal:4873"
-  echo "   localhost unreachable, trying $VERDACCIO_URL..."
+if [ -z "${VERDACCIO_LICENSE_KEY:-}" ]; then
+  echo "ℹ️  VERDACCIO_LICENSE_KEY not set — skipping private registry (public npm only)"
+  VERDACCIO_URL=""
+else
+  VERDACCIO_URL="http://localhost:4873"
+  echo "🔍 Checking Verdaccio registry at $VERDACCIO_URL..."
   if ! wget -q --spider --timeout=3 "$VERDACCIO_URL" 2>/dev/null; then
-    echo "❌ Verdaccio not reachable at localhost:4873 or host.docker.internal:4873. Build will fail."
-    echo "   Ensure Verdaccio is running: docker ps | grep verdaccio"
-    exit 1
+    VERDACCIO_URL="http://host.docker.internal:4873"
+    echo "   localhost unreachable, trying $VERDACCIO_URL..."
+    if ! wget -q --spider --timeout=3 "$VERDACCIO_URL" 2>/dev/null; then
+      echo "❌ Verdaccio not reachable at localhost:4873 or host.docker.internal:4873. Build will fail."
+      echo "   Ensure Verdaccio is running: docker ps | grep verdaccio"
+      exit 1
+    fi
   fi
+  echo "✅ Verdaccio available at $VERDACCIO_URL"
 fi
-echo "✅ Verdaccio available at $VERDACCIO_URL"
 
 # =============================================================================
 # CRITICAL FIX: Reduced timeout for faster failure detection (was 900s)

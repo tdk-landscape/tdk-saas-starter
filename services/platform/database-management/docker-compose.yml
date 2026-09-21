@@ -1,3 +1,9 @@
+###############################################################################
+# SYSTEM-GENERATED - DO NOT EDIT
+# Stack feature: database-management
+# Source: .tdk/project.json stacks.*.services includes "database-management"
+###############################################################################
+
 services:
   postgres:
     image: postgres:16-alpine

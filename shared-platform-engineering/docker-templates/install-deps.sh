@@ -33,8 +33,8 @@ mkdir -p $BUN_INSTALL_CACHE_DIR
 # Check Verdaccio registry (premium feature — only required when VERDACCIO_LICENSE_KEY is set)
 # Without a license key, skip Verdaccio and fall back to public npm registry.
 # =============================================================================
-if [ -z "${VERDACCIO_LICENSE_KEY:-}" ]; then
-  echo "ℹ️  VERDACCIO_LICENSE_KEY not set — skipping private registry (public npm only)"
+if [ -z "${TDK_LICENSE_KEY:-}" ]; then
+  echo "ℹ️  TDK_LICENSE_KEY not set — skipping private registry (public npm only)"
   VERDACCIO_URL=""
 else
   VERDACCIO_URL="http://localhost:4873"

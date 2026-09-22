@@ -4,11 +4,11 @@
     "name": "tdk-saas-starter",
     "version": "1.0.0"
   },
-  "stacks": {
+  "phases": {
     "pre_alpha": {
       "name": "Pre-Alpha",
       "description": "Core infrastructure and MVP services",
-      "services": [
+      "enabledStacks": [
         "proxy",
         "verdaccio",
         "database-management",
@@ -19,17 +19,17 @@
     "alpha": {
       "name": "Alpha",
       "description": "Essential business services",
-      "services": []
+      "enabledStacks": []
     },
     "beta": {
       "name": "Beta",
       "description": "Extended features",
-      "services": []
+      "enabledStacks": []
     },
     "out_of_scope": {
       "name": "Out of Scope",
       "description": "Future releases",
-      "services": []
+      "enabledStacks": []
     }
   },
   "optional_infra": {

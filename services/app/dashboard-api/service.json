@@ -3,7 +3,7 @@
     "appType": "backend",
     "stack": "app",
     "port": 4200,
-    "features": [
+    "featuresEnabled": [
         "prisma"
     ],
     "dependsOn": [],

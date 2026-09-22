@@ -3,7 +3,7 @@
     "appType": "backend",
     "stack": "billing",
     "port": 4210,
-    "features": [
+    "featuresEnabled": [
         "prisma"
     ],
     "dependsOn": [],

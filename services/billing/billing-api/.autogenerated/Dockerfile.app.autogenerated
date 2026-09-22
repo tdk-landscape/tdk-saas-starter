@@ -114,6 +114,9 @@ COPY --from=l3_production_purger /app/services/billing/billing-api/node_modules 
 COPY --from=l3_production_purger /app/services/billing/billing-api/node_modules/.bun /app/node_modules/.bun
 COPY --from=l3_backend_build /app/services/billing/billing-api/node_modules/.prisma ./node_modules/.prisma
 COPY --from=l3_backend_build /app/services/billing/billing-api/prisma ./prisma
+# Prisma CLI at the version pinned in package.json - the entrypoint runs
+# migrations with it instead of `bunx prisma`, which would fetch prisma@latest.
+COPY --from=l3_migration_build /app/services/billing/billing-api/node_modules/prisma ./node_modules/prisma
 COPY --from=l3_backend_build /app/services/billing/billing-api/dist ./dist
 COPY services/billing/billing-api/package.json ./package.json
 # Fix Bun module resolution: .prisma/client must be reachable from .bun/ linker paths

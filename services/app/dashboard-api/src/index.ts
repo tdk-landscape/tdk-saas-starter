@@ -20,6 +20,16 @@ const activity = [
     { id: 'evt_504', account: 'Ridgeline Co', event: 'Started a 14-day trial', at: '1h ago' },
 ];
 
+app.get('/', (c) => c.json({
+    service: 'dashboard-api',
+    status: 'ok',
+    endpoints: [
+        'GET  /health',
+        'GET  /api/v1/metrics',
+        'GET  /api/v1/activity',
+    ],
+}));
+
 app.get('/health', (c) => c.json({ status: 'ok', service: 'dashboard-api', timestamp: new Date().toISOString() }));
 
 app.get('/api/dashboard-management', (c) => c.json({

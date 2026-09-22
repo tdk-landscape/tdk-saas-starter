@@ -22,6 +22,17 @@ const subscription = { plan: 'growth', status: 'active', renewsOn: '2026-10-14' 
 
 const sessions = new Map<string, { planId: string; status: string }>();
 
+app.get('/', (c) => c.json({
+    service: 'billing-api',
+    status: 'ok',
+    endpoints: [
+        'GET  /health',
+        'GET  /api/v1/plans',
+        'GET  /api/v1/subscription',
+        'POST /api/v1/checkout-session',
+    ],
+}));
+
 app.get('/health', (c) => c.json({ status: 'ok', service: 'billing-api', timestamp: new Date().toISOString() }));
 
 app.get('/api/billing-management', (c) => c.json({

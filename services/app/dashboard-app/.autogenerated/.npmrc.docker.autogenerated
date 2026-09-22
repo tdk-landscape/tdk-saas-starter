@@ -10,10 +10,6 @@
 ###############################################################################
 
 registry=https://registry.npmjs.org/
-@tdk-saas-starter:registry=http://host.docker.internal:4873/
-@tdk-landscape:registry=http://host.docker.internal:4873/
-@identity:registry=http://host.docker.internal:4873/
-//host.docker.internal:4873/:username=admin
-//host.docker.internal:4873/:_password=YWRtaW4=
-//host.docker.internal:4873/:email=admin@example.com
-//host.docker.internal:4873/:always-auth=true
+@tdk-saas-starter:registry=https://registry.npmjs.org/
+@tdk-landscape:registry=https://registry.npmjs.org/
+@identity:registry=https://registry.npmjs.org/

@@ -13,3 +13,8 @@
 linker = "isolated"
 linkWorkspacePackages = true
 registry = "https://registry.npmjs.org"
+
+[install.scopes]
+"@tdk-saas-starter" = { url = "http://host.docker.internal:4873/" }
+"@tdk-landscape" = { url = "http://host.docker.internal:4873/" }
+"@identity" = { url = "http://host.docker.internal:4873/" }

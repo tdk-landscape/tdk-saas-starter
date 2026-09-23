@@ -9,7 +9,7 @@
 # PORT DEFINITIONS - Change these to change ports everywhere
 # =============================================================================
 x-backend-port: &backend-port 4200
-x-frontend-port: &frontend-port 80
+x-frontend-port: &frontend-port 3200
 
 # =============================================================================
 # MEMORY LIMITS
@@ -51,7 +51,7 @@ services:
       - INFISICAL_API_URL=${INFISICAL_API_URL:-http://infisical:8080}
       - INFISICAL_PROJECT_ID=${INFISICAL_PROJECT_ID:-}
       - INFISICAL_ENVIRONMENT=${INFISICAL_ENVIRONMENT:-dev}
-      - INFISICAL_ALLOW_FALLBACK=${INFISICAL_ALLOW_FALLBACK:-true}
+      - INFISICAL_ALLOW_FALLBACK=${INFISICAL_ALLOW_FALLBACK:-false}
       - RESOURCE_NAME=app
       - PORT=4200
       - INSTANCE_ID=0
@@ -135,13 +135,13 @@ services:
         - "traefik.http.routers.dashboard-app.priority=114"
         - "traefik.http.routers.dashboard-app.middlewares=dashboard-app-strip-prefix"
         - "traefik.http.middlewares.dashboard-app-strip-prefix.stripprefix.prefixes=/dashboard-app"
-        - "traefik.http.services.dashboard-app.loadbalancer.server.port=80"
+        - "traefik.http.services.dashboard-app.loadbalancer.server.port=3200"
         - "traefik.docker.network=tdk_saas_starter_traefik-public"
     networks:
         - tdk_saas_starter_traefik-public
         - tdk_saas_starter_backend
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:80"]
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:3200"]
       interval: 10s
       timeout: 5s
       retries: 3

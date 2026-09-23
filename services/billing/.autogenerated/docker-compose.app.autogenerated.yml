@@ -9,7 +9,7 @@
 # PORT DEFINITIONS - Change these to change ports everywhere
 # =============================================================================
 x-backend-port: &backend-port 4210
-x-frontend-port: &frontend-port 3210
+x-frontend-port: &frontend-port 80
 
 # =============================================================================
 # MEMORY LIMITS
@@ -51,7 +51,7 @@ services:
       - INFISICAL_API_URL=${INFISICAL_API_URL:-http://infisical:8080}
       - INFISICAL_PROJECT_ID=${INFISICAL_PROJECT_ID:-}
       - INFISICAL_ENVIRONMENT=${INFISICAL_ENVIRONMENT:-dev}
-      - INFISICAL_ALLOW_FALLBACK=${INFISICAL_ALLOW_FALLBACK:-false}
+      - INFISICAL_ALLOW_FALLBACK=${INFISICAL_ALLOW_FALLBACK:-true}
       - RESOURCE_NAME=billing
       - PORT=4210
       - INSTANCE_ID=0
@@ -60,6 +60,10 @@ services:
       - TILT_NATS_URL=nats://tdk_saas_starter_nats:4222
       - NODE_ENV=development
       - DATABASE_URL=postgresql://tdk_saas_starter:${DB_PASSWORD}@tdk_saas_starter_postgres:5432/tdk_saas_starter_billing?schema=public
+      # Per-project escape hatch: set AUTO_MIGRATE=false in the project root .env
+      # to skip Prisma auto-migration at container boot (e.g. while diagnosing a
+      # migration/CLI issue) without touching the generator or any service code.
+      - AUTO_MIGRATE=${AUTO_MIGRATE:-true}
       - AUTH_MODE=identity-service
       - IDENTITY_RESOURCE_URL=${IDENTITY_RESOURCE_URL:-None}
     labels:
@@ -130,18 +134,18 @@ services:
         - VITE_APP_ENV=development
     labels:
         - "traefik.enable=true"
-        - 'traefik.http.routers.checkout-app.rule=Host(`checkout-app.localhost`) || (Host(`app.tdk-saas-starter.localhost`) && PathPrefix(`/billings`)) || (Host(`localhost`) && PathPrefix(`/billings`))'
+        - 'traefik.http.routers.checkout-app.rule=Host(`checkout-app.localhost`) || (Host(`app.tdk-saas-starter.localhost`) && PathPrefix(`/checkout-app`)) || (Host(`localhost`) && PathPrefix(`/checkout-app`))'
         - "traefik.http.routers.checkout-app.entrypoints=web,websecure"
-        - "traefik.http.routers.checkout-app.priority=109"
+        - "traefik.http.routers.checkout-app.priority=113"
         - "traefik.http.routers.checkout-app.middlewares=checkout-app-strip-prefix"
-        - "traefik.http.middlewares.checkout-app-strip-prefix.stripprefix.prefixes=/billings"
-        - "traefik.http.services.checkout-app.loadbalancer.server.port=3210"
+        - "traefik.http.middlewares.checkout-app-strip-prefix.stripprefix.prefixes=/checkout-app"
+        - "traefik.http.services.checkout-app.loadbalancer.server.port=80"
         - "traefik.docker.network=tdk_saas_starter_traefik-public"
     networks:
         - tdk_saas_starter_traefik-public
         - tdk_saas_starter_backend
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:3210"]
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:80"]
       interval: 10s
       timeout: 5s
       retries: 3

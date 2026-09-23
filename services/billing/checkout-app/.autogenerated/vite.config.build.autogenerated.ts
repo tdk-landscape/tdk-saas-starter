@@ -17,7 +17,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   mode: 'production',
-  base: '/billings/',
+  base: '/checkout-app/',
   build: {
     cssCodeSplit: false,
     minify: true,

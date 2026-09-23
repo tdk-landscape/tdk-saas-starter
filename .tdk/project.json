@@ -10,7 +10,6 @@
       "description": "Core infrastructure and MVP services",
       "enabledStacks": [
         "proxy",
-        "verdaccio",
         "database-management",
         "app",
         "billing",

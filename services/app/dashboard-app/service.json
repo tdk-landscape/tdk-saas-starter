@@ -2,7 +2,7 @@
     "appName": "dashboard-app",
     "appType": "frontend",
     "stack": "app",
-    "port": 3200,
+    "port": 80,
     "basePath": "/dashboard-app",
     "dependsOn": [
         "dashboard-api"

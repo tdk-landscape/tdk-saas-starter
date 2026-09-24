@@ -37,7 +37,7 @@ export default defineConfig({
   plugins: [react()],
   preview: {
     host: '0.0.0.0',
-    port: 3200,
+    port: 80,
   },
   resolve: {
     alias: {
@@ -50,9 +50,9 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0',
-    port: 3200,
+    port: 80,
     hmr: {
-      port: 4200,
+      port: 1080,
     },
     proxy: {
       '': {

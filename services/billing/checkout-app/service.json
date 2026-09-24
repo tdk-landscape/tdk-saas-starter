@@ -2,7 +2,7 @@
     "appName": "checkout-app",
     "appType": "frontend",
     "stack": "billing",
-    "port": 3210,
+    "port": 80,
     "dependsOn": [
         "billing-api"
     ],

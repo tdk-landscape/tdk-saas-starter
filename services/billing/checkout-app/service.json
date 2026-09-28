@@ -2,7 +2,7 @@
     "appName": "checkout-app",
     "appType": "frontend",
     "stack": "billing",
-    "port": 80,
+    "port": 3001,
     "basePath": "/checkout-app",
     "dependsOn": [
         "billing-api"

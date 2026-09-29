@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
-const BILLING_API_URL = 'http://localhost:4210';
+const BILLING_API_URL = import.meta.env.VITE_BILLING_API_URL || 'http://api.tdk-saas-starter.localhost/api/billing';
 
 interface Plan {
   id: string;
@@ -109,7 +109,7 @@ export function App() {
       <section id="plans" className="plans-section">
         <div className="plans-intro">
           <h2>Plans, served from billing-api.</h2>
-          <p>{plansSource === 'live' ? 'Live plans pulled from the running billing-api resource.' : 'Sample plans shown until billing-api is running on :4210.'}</p>
+          <p>{plansSource === 'live' ? 'Live plans pulled from the running billing-api resource.' : 'Sample plans shown until billing-api is reachable.'}</p>
         </div>
 
         <div className="plans-grid">

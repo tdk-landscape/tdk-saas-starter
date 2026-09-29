@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const DASHBOARD_API_URL = 'http://localhost:4200';
+const DASHBOARD_API_URL = import.meta.env.VITE_DASHBOARD_API_URL || 'http://api.tdk-saas-starter.localhost/api/dashboard';
 
 interface Metrics {
   mrr: number;

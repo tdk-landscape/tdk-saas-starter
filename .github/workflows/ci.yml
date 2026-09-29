@@ -1,4 +1,4 @@
-name: TDK CI
+name: 🚀 SaaS Starter CI
 
 on:
   pull_request:

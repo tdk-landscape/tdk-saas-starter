@@ -1,14 +1,12 @@
 {
-    "appName": "billing-api",
-    "appType": "backend",
-    "stack": "billing",
-    "port": 4210,
-    "featuresEnabled": [
-        "prisma"
-    ],
-    "dependsOn": [],
-    "healthCheck": {
-        "enabled": true,
-        "path": "/health"
-    }
+  "appName": "billing-api",
+  "appType": "backend",
+  "stack": "billing",
+  "port": 4210,
+  "featuresEnabled": [
+    "prisma"
+  ],
+  "dependsOn": [],
+  "healthCheckPath": "/health",
+  "schemaVersion": 1
 }

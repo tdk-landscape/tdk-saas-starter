@@ -1,14 +1,12 @@
 {
-    "appName": "dashboard-app",
-    "appType": "frontend",
-    "stack": "app",
-    "port": 3000,
-    "basePath": "/dashboard-app",
-    "dependsOn": [
-        "dashboard-api"
-    ],
-    "healthCheck": {
-        "enabled": true,
-        "path": "/"
-    }
+  "appName": "dashboard-app",
+  "appType": "frontend",
+  "stack": "app",
+  "port": 3000,
+  "basePath": "/dashboard-app",
+  "dependsOn": [
+    "dashboard-api"
+  ],
+  "healthCheckPath": "/",
+  "schemaVersion": 1
 }

@@ -1,14 +1,12 @@
 {
-    "appName": "checkout-app",
-    "appType": "frontend",
-    "stack": "billing",
-    "port": 3001,
-    "basePath": "/checkout-app",
-    "dependsOn": [
-        "billing-api"
-    ],
-    "healthCheck": {
-        "enabled": true,
-        "path": "/"
-    }
+  "appName": "checkout-app",
+  "appType": "frontend",
+  "stack": "billing",
+  "port": 3001,
+  "basePath": "/checkout-app",
+  "dependsOn": [
+    "billing-api"
+  ],
+  "healthCheckPath": "/",
+  "schemaVersion": 1
 }
